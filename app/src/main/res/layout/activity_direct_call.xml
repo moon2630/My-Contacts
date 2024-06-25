@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".directCall">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_42sdp"
+        app:cardBackgroundColor="#3552F3"
+
+        app:cardElevation="@dimen/_15sdp">
+
+        <TextView
+            android:backgroundTint="@color/white"
+            android:id="@+id/details_back22"
+            android:layout_width="35dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back" />
+
+        <TextView
+            android:textStyle="bold"
+            android:fontFamily="@font/artifika"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="13dp"
+            android:text="Direct Call"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <EditText
+        android:fontFamily="@font/brygada_1918"
+        android:id="@+id/number"
+        android:gravity="center"
+        android:layout_marginTop="260dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Mobile Number"
+        android:inputType="number"
+        android:maxLength="10"
+        android:textSize="25sp" />
+
+
+    <ImageButton
+        android:background="@drawable/call_bg"
+        android:id="@+id/call"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginLeft="150dp"
+        android:src="@drawable/mobileno"/>
+
+
+
+</RelativeLayout>

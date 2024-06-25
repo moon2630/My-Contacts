@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".signup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie"
+                android:layout_width="wrap_content"
+                android:layout_height="180dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="15dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/anime7" />
+
+            <EditText
+                android:fontFamily="@font/brygada_1918"
+
+                android:drawableEnd="@drawable/person_vector_effect"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/signup_email"
+                android:inputType="text"
+                android:layout_marginTop="15dp"
+                android:padding="8dp"
+                android:hint="Username/Uid"
+
+                android:drawablePadding="8dp" />
+
+            <EditText
+                android:fontFamily="@font/brygada_1918"
+                android:drawableEnd="@drawable/email_vector_effect"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/signup_number"
+                android:layout_marginTop="0dp"
+                android:padding="8dp"
+                android:hint="Email"
+                android:inputType="text"
+                android:drawablePadding="8dp" />
+
+
+
+
+
+            <EditText
+                android:drawableEnd="@drawable/key_vector_effect"
+                android:fontFamily="@font/brygada_1918"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/signup_password"
+                android:padding="8dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:drawablePadding="8dp" />
+
+            <EditText
+                android:drawableEnd="@drawable/lock_vector_effect"
+                android:fontFamily="@font/brygada_1918"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/signup_confirm"
+                android:padding="8dp"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:drawablePadding="8dp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/brygada_1918"
+            android:background="@drawable/buttonbg"
+            android:id="@+id/signup_button"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:textStyle="bold"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="10dp"
+            android:text="Signup"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="20dp" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+

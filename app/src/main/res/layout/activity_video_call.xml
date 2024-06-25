@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".video_call">
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="62dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:fontFamily="@font/brygada_1918"
+            android:text="Uid :"
+            android:textColor="#A6A2A2"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold" />
+
+
+
+
+
+        <TextView
+            android:id="@+id/userID_video_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:fontFamily="@font/brygada_1918"
+            android:text="1234567821"
+            android:textColor="#A6A2A2"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_42sdp"
+        app:cardBackgroundColor="#3552F3"
+
+        app:cardElevation="@dimen/_15sdp">
+
+        <TextView
+            android:id="@+id/close_video_call"
+            android:layout_width="35dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/close"
+            android:backgroundTint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="13dp"
+            android:fontFamily="@font/artifika"
+            android:text="Video calling"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/target_user_id"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Invite UserID"
+        android:minWidth="164dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:fontFamily="@font/brygada_1918"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    </RelativeLayout>
+
+
+
+    <ImageButton
+        android:background="@drawable/call_bg"
+        android:id="@+id/video_call_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginLeft="150dp"
+        android:src="@drawable/video_vector"/>
+
+
+
+    <TextView
+        android:layout_below="@id/video_call_btn"
+        android:textStyle="bold"
+        android:fontFamily="@font/artifika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="138dp"
+        android:layout_marginTop="5dp"
+        android:text="Video Call"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+
+
+
+
+</RelativeLayout>

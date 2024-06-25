@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".getstarted">
+
+    <TextView
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:background="@drawable/purple"/>
+
+    <ImageView
+        android:layout_width="294dp"
+        android:layout_height="366dp"
+        android:src="@drawable/removebg"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="35dp"/>
+
+
+
+    <LinearLayout
+        android:layout_below="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:fontFamily="@font/brygada_1918"
+        android:layout_marginTop="5dp"
+        android:id="@+id/text1"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:text="WELCOME TO"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:textSize="22sp"
+        android:layout_below="@id/bg"/>
+
+    <TextView
+        android:fontFamily="@font/brygada_1918"
+        android:id="@+id/text2"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:text="MY CONTACTS"
+        android:textStyle="bold"
+        android:translationY="-5dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:textSize="30sp" />
+
+
+        <TextView
+            android:translationY="-5dp"
+            android:fontFamily="@font/brygada_1918"
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="THIS IS THE BEST APP TO"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#9A9595"/>
+
+        <TextView
+            android:translationY="-7dp"
+            android:fontFamily="@font/brygada_1918"
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="USE WITH SO MANY FEATURES"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#9A9595"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/getStart"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/bg"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/getstarted"
+        android:layout_marginTop="230dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/artifika"
+            android:text="Get started"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".login2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:padding="20dp">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                app:lottie_autoPlay="true"
+                android:layout_marginTop="15dp"
+                app:lottie_loop="true"
+                android:layout_marginLeft="15dp"
+                app:lottie_rawRes="@raw/anime6" />
+
+
+            <EditText
+                android:fontFamily="@font/brygada_1918"
+                android:drawableEnd="@drawable/email_vector_effect"
+                android:inputType="text"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/login_number"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Email"
+                />
+
+            <EditText
+                android:fontFamily="@font/brygada_1918"
+                android:drawableEnd="@drawable/lock_vector_effect"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/login_password"
+                android:padding="8dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:drawablePadding="8dp" />
+
+
+            <TextView
+                android:fontFamily="@font/brygada_1918"
+                android:id="@+id/forgetPass"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:textAlignment="center"
+                android:text="Forgot password?"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="135dp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/brygada_1918"
+            android:background="@drawable/buttonbg"
+            android:id="@+id/login_button"
+            android:textColor="@color/white"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="30dp"
+            android:text="Login"
+            android:textSize="20sp"
+            app:cornerRadius="20dp" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+
+
+

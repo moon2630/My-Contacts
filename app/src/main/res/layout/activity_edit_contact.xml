@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editContact">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            app:cardBackgroundColor="#3552F3"
+
+            app:cardElevation="@dimen/_15sdp">
+
+            <TextView
+                android:backgroundTint="@color/white"
+                android:id="@+id/close"
+                android:layout_width="35dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/close" />
+
+            <TextView
+                android:textStyle="bold"
+                android:fontFamily="@font/artifika"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="13dp"
+                android:text="Edit contact"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="80dp"
+            android:id="@+id/image"
+            android:layout_width="180dp"
+            android:layout_height="178dp"
+            android:layout_gravity="center"
+            android:background="@drawable/add_picture"
+            />
+
+        <TextView
+            android:fontFamily="@font/brygada_1918"
+            android:layout_below="@id/image"
+            android:id="@+id/addpicture"
+            android:layout_width="134dp"
+            android:layout_height="35dp"
+            android:text="Add picture"
+            android:gravity="center"
+            android:layout_marginLeft="108dp"
+            android:textColor="#0E30EF"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="340dp"
+            app:srcCompat="@drawable/person"
+            android:layout_marginLeft="18dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="270dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="320dp"
+            app:boxStrokeColor="#0863FA"
+            android:layout_marginLeft="60dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:fontFamily="@font/brygada_1918"
+                android:inputType="text"
+                android:id="@+id/name"
+                android:layout_width="270dp"
+                android:layout_height="55dp"
+                android:hint="Name"
+                android:textSize="18dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        <ImageView
+            android:layout_below="@id/imageView1"
+            android:id="@+id/imageView2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="55dp"
+            app:srcCompat="@drawable/mobileno"
+            android:layout_marginLeft="18dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout2"
+            android:layout_below="@id/layout1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="270dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="20dp"
+            app:boxStrokeColor="#0863FA"
+            app:endIconMode="clear_text"
+            android:layout_marginLeft="60dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone"
+                android:fontFamily="@font/brygada_1918"
+                android:layout_width="270dp"
+                android:layout_height="55dp"
+                android:hint="Mobile no"
+                android:maxLength="10"
+                android:inputType="phone"
+                android:textSize="18dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:layout_below="@id/imageView2"
+            android:id="@+id/imageView3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="55dp"
+            app:srcCompat="@drawable/email"
+            android:layout_marginLeft="18dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout3"
+            android:layout_below="@id/layout2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="270dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="20dp"
+            app:boxStrokeColor="#0863FA"
+            app:endIconMode="clear_text"
+            android:layout_marginLeft="60dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:fontFamily="@font/brygada_1918"
+                android:layout_width="270dp"
+                android:layout_height="55dp"
+                android:hint="Email"
+                android:inputType="text"
+                android:textSize="18dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:layout_below="@id/imageView3"
+            android:id="@+id/imageView4"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="55dp"
+            app:srcCompat="@drawable/note"
+            android:layout_marginLeft="18dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout4"
+            android:layout_below="@id/layout3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="270dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="20dp"
+            app:boxStrokeColor="#0863FA"
+            app:endIconMode="clear_text"
+            android:layout_marginLeft="60dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/note"
+                android:layout_width="270dp"
+                android:fontFamily="@font/brygada_1918"
+                android:layout_height="55dp"
+                android:hint="note"
+                android:inputType="text"
+                android:textSize="18dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/savedata"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/layout4"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/aclonica"
+            android:textStyle="bold"
+            android:background="@drawable/forgotbtndesign"
+            android:text="save"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+
+    </RelativeLayout>
+
+</ScrollView>
