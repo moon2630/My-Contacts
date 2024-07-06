@@ -2,6 +2,7 @@ package com.example.mycontacts;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ public class list extends AppCompatActivity implements ItemClickListner{
     RecyclerView recyclerView;
 
     private TextView iv_mic, txtFilter;
-    TextView addContactTxt, HistoryTxt, LogTxt, call_txt, videoCall_txt;
+    TextView addContactTxt, HistoryTxt, LogTxt, call_txt, videoCall_txt,txtUserId;
     DatabaseReference database;
     Query query;
 
@@ -79,6 +80,7 @@ public class list extends AppCompatActivity implements ItemClickListner{
         LogTxt = findViewById(R.id.logoutTxt);
         call_txt = findViewById(R.id.direct_call_txt);
         videoCall_txt = findViewById(R.id.videoCallTxt);
+        txtUserId=findViewById(R.id.userID_list);
 
 
         //phela thi fab na badha btn nahi dekhay te mate jayre + btn par click kare tyre visible n gone thse
@@ -179,6 +181,8 @@ public class list extends AppCompatActivity implements ItemClickListner{
             }
         });
 
+        displayUserName();
+
 
         searchCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -237,51 +241,6 @@ public class list extends AppCompatActivity implements ItemClickListner{
             }
         });
 
-//        searchView.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
-//                if (charSequence.toString().isEmpty()) {
-//
-//                } else {
-//                    searchUser(charSequence.toString());
-//                }
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        });
-        //  }
-
-//    public void searchUser(String userName) {
-//        arrayList.clear();
-//        DatabaseReference contactRef = FirebaseDatabase.getInstance().getReference("ContactsList");
-//        //Query Based On Contact Name
-//        Query searchQuery = contactRef.orderByChild("name").startAt(userName).endAt(userName + "\uf8ff");
-//        searchQuery.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-//                    userinfo user = dataSnapshot.getValue(userinfo.class);
-//                    arrayList.add(user);
-//                }
-//                adapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-
-
-        // }
 
 
     }
@@ -292,6 +251,26 @@ public class list extends AppCompatActivity implements ItemClickListner{
         i.putExtra("node_id", u.getNode_id());
         startActivity(i);
         finish();
+    }
+
+    public void displayUserName(){
+        DatabaseReference userRef=FirebaseDatabase.getInstance().getReference("User");
+        Query userQuery=userRef.orderByChild("user_Id").equalTo(fuser.getUid());
+        userQuery.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    for(DataSnapshot userSnapShot:snapshot.getChildren()) {
+                        txtUserId.setText(userSnapShot.child("user_Name").getValue(String.class));
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
 

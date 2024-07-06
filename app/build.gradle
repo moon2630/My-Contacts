@@ -65,4 +65,8 @@ dependencies {
     implementation ("com.intuit.sdp:sdp-android:1.1.0")
     implementation ("com.intuit.ssp:ssp-android:1.1.0")
 
+
+    implementation("com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android:+")
+    implementation("com.github.ZEGOCLOUD:zego_uikit_signaling_plugin_android:+")
+
 }

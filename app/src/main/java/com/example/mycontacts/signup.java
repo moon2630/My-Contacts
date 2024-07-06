@@ -26,8 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class signup extends Fragment {
 
     AppCompatButton btn;
-    private String email,name,password;
-    EditText txt_email,txt_name,txt_password,txt_confirm_password;
+    private String email, name, password;
+    EditText txt_email, txt_name, txt_password, txt_confirm_password;
     private FirebaseAuth auth;
     private DatabaseReference database;
 
@@ -39,30 +39,33 @@ public class signup extends Fragment {
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
 
         btn = view.findViewById(R.id.signup_button);
-        txt_email=view.findViewById(R.id.signup_number);
-        txt_name=view.findViewById(R.id.signup_email);
-        txt_confirm_password=view.findViewById(R.id.signup_confirm);
-        txt_password=view.findViewById(R.id.signup_password);
+        txt_email = view.findViewById(R.id.signup_number);
+        txt_name = view.findViewById(R.id.signup_email);
+        txt_confirm_password = view.findViewById(R.id.signup_confirm);
+        txt_password = view.findViewById(R.id.signup_password);
 
-        auth=FirebaseAuth.getInstance();
-        database= FirebaseDatabase.getInstance().getReference("User");
+        auth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance().getReference("User");
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name=txt_name.getText().toString();
-                email=txt_email.getText().toString();
-                password=txt_confirm_password.getText().toString();
+                name = txt_name.getText().toString();
+                email = txt_email.getText().toString();
+                password = txt_confirm_password.getText().toString();
 
-                if(validInput(name,email,password)){
+                if (validInput(name, email, password)) {
 
-                    auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-
-                            if(task.isSuccessful()){
-
-                                Intent intent = new Intent(getActivity(),list.class);
+                            if (task.isSuccessful()) {
+                                user u = new user();
+                                u.setUser_Email(email);
+                                u.setUser_Name(name);
+                                u.setUser_Id(auth.getUid());
+                                AddUser(u);
+                                Intent intent = new Intent(getActivity(), list.class);
                                 startActivity(intent);
                                 getActivity().finish();
                             }
@@ -80,7 +83,7 @@ public class signup extends Fragment {
 
     }
 
-    private boolean validInput(String name,String email,String Password){
+    private boolean validInput(String name, String email, String Password) {
 
         if (TextUtils.isEmpty(email)) {
             txt_email.setError("Email is required.");
@@ -93,17 +96,17 @@ public class signup extends Fragment {
             txt_confirm_password.setError("Password is required.");
             return false;
         }
-        if(!txt_password.getText().toString().equals(password)){
+        if (!txt_password.getText().toString().equals(password)) {
             txt_confirm_password.setError("Password Is not same ");
             return false;
         }
-        if (txt_password.getText().toString().length()<=5) {
+        if (txt_password.getText().toString().length() <= 5) {
             txt_password.requestFocus();
             txt_password.setError("Password is Too short Min 6 Char.");
             return false;
         }
 
-        if(TextUtils.isEmpty(txt_password.getText().toString())){
+        if (TextUtils.isEmpty(txt_password.getText().toString())) {
             txt_password.setError("Password is required.");
             return false;
         }

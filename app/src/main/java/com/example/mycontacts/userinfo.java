@@ -15,6 +15,15 @@ public class userinfo {
     private String Note;
     private String imageurl;
     private String user_id;
+    private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public String getNode_id() {
         return node_id;

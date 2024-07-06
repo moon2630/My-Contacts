@@ -8,9 +8,13 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -45,6 +49,8 @@ import com.google.firebase.storage.UploadTask;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -151,6 +157,7 @@ public class editContact extends AppCompatActivity {
                 String emailup = emailEt.getText().toString();
                 String numup = phoneEt.getText().toString();
                 String note = noteEt.getText().toString();
+                imageUri=getUri();
 
                 StorageReference image = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(String.valueOf(imageUri)));
                 image.putFile(Uri.parse(String.valueOf(imageUri))).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -160,7 +167,6 @@ public class editContact extends AppCompatActivity {
                             @Override
                             public void onSuccess(Uri uri) {
                                 updatadata(nameup,emailup,numup,note, String.valueOf(imageUri));
-
 
                             }
                         });
@@ -357,6 +363,29 @@ public class editContact extends AppCompatActivity {
             }
 
         }
+    }
+
+    public Uri getUri() {
+        Uri imageUri = null;
+        // Assuming you have an ImageView called 'imageView' in your layout
+        //ImageView imageView = findViewById(R.id.);
+        Drawable drawable = profileIv.getDrawable();
+
+        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+        FileOutputStream fileOutputStream;
+        try {
+            File file = new File(getCacheDir(), "image.png");
+            FileOutputStream outputStream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+            outputStream.flush();
+            outputStream.close();
+            imageUri = Uri.fromFile(file);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Log.d("image", "image uri in method:" + imageUri);
+        return imageUri;
+
     }
 }
 

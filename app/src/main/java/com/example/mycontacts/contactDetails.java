@@ -37,7 +37,7 @@ import java.util.Calendar;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class contactDetails extends AppCompatActivity {
-    private TextView txt_contact_name, txt_contact_email, txt_contact_note, txt_contact_number, txt_delete, back, txt_update;
+    private TextView txt_contact_name, txt_contact_email, txt_contact_note, txt_contact_number, txt_delete, back, txt_update, txtDate;
     CircleImageView img_contact;
     DatabaseReference database;
     String phone;
@@ -58,6 +58,7 @@ public class contactDetails extends AppCompatActivity {
         txt_contact_number = findViewById(R.id.details_number);
         img_contact = findViewById(R.id.details_image);
         txt_contact_name = findViewById(R.id.details_name);
+        txtDate = findViewById(R.id.date);
 
         callText = findViewById(R.id.details_number);
 
@@ -113,6 +114,7 @@ public class contactDetails extends AppCompatActivity {
                 txt_contact_email.setText(u.getEmail());
                 txt_contact_number.setText(u.getNumber());
                 txt_contact_note.setText(u.getNote());
+                txtDate.setText(u.getDate());
                 Glide.with(getApplicationContext()).load(u.getImageurl()).into(img_contact);
             }
 

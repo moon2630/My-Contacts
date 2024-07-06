@@ -53,6 +53,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -130,6 +133,7 @@ public class createcontact extends AppCompatActivity {
                 u.setNumber(number_txt.getText().toString());
                 u.setEmail(email_txt.getText().toString());
                 u.setNote(note_txt.getText().toString());
+                u.setDate(getCurrentDate());
                 imageUri = getUri();
                 Log.d("image", "image uri is " + imageUri);
                 uploadToFirebase(imageUri, u);
@@ -382,5 +386,10 @@ public class createcontact extends AppCompatActivity {
 
             }
         }
+    }
+
+    public String getCurrentDate(){
+        SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        return sdf.format(new Date());
     }
 }

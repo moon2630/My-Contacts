@@ -94,6 +94,7 @@
         android:minWidth="164dp">
 
         <com.google.android.material.textfield.TextInputEditText
+
             android:fontFamily="@font/brygada_1918"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,19 +107,30 @@
 
 
 
-    <ImageButton
-        android:background="@drawable/call_bg"
-        android:id="@+id/video_call_btn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+<!--    <ImageButton-->
+<!--        android:background="@drawable/call_bg"-->
+<!--        android:id="@+id/video_call_btn"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginTop="340dp"-->
+<!--        android:layout_marginLeft="150dp"-->
+<!--        android:src="@drawable/video_vector"/>-->
+
+    <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+        android:id="@+id/new_video_call"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="340dp"
         android:layout_marginLeft="150dp"
-        android:src="@drawable/video_vector"/>
+        />
+
+
+
 
 
 
     <TextView
-        android:layout_below="@id/video_call_btn"
+        android:layout_below="@id/new_video_call"
         android:textStyle="bold"
         android:fontFamily="@font/artifika"
         android:layout_width="wrap_content"
